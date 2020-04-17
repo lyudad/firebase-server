@@ -1,0 +1,28 @@
+{
+  "hosting": {
+    "public": "public",
+    "rewrites": [{
+      "source": "/register",
+      "function": "app"
+    },{
+      "source": "/login",
+      "function": "app"
+    }, {
+      "source": "/get-products",
+      "function": "app"
+    }, {
+      "source": "/add-product",
+      "function": "app"
+    }],
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  },
+  "functions": {
+    "predeploy": [
+      "npm --prefix \"$RESOURCE_DIR\" run lint"
+    ]
+  }
+}
